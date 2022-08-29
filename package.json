@@ -1,0 +1,20 @@
+{
+  "name": "tic-tac-toe-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express-jwt": "^7.7.5",
+    "uuid": "^8.3.2"
+  }
+}
