@@ -1,18 +1,23 @@
+// import packages
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
 const fs = require('fs');
 
+// import config
 const config = require('../config');
 
+// get data from JSON database
 let rawData = fs.readFileSync('data.json');
 let database = JSON.parse(rawData);
 
 let should = chai.should();
 
+// test framework
 chai.use(chaiHttp);
 
+// remove data from JSON database
 function cleanDatabase() {
     database.players = [];
 
@@ -20,34 +25,37 @@ function cleanDatabase() {
     fs.writeFileSync('data.json', rawData);
 }
 
+// tests for player
 describe('Player', () => {
 
+    // tests for a player to login
     describe('Login Player', () => {
 
+        // clean database before all tests
         before((done) => {
             cleanDatabase();
-
             done();
         });
 
+        // clean database after all tests
         after((done) => {
             cleanDatabase();
-
             done();
         });
 
+        // clean database before each test
         beforeEach((done) => {
             cleanDatabase();
-
             done();
         });
 
+        // clean database after each test
         afterEach((done) => {
             cleanDatabase();
-
             done();
         });
 
+        // tests
         it('it should POST a player for login', (done) => {
             let player = {
                 username: 'john',
@@ -159,32 +167,34 @@ describe('Player', () => {
         });
     });
 
+    // tests for a player to register
     describe('Register Player', () => {
 
+        // clean database before all tests
         before((done) => {
             cleanDatabase();
-
             done();
         });
 
+        // clean database after all tests
         after((done) => {
             cleanDatabase();
-
             done();
         });
 
+        // clean database before each test
         beforeEach((done) => {
             cleanDatabase();
-
             done();
         });
 
+        // clean database after each test
         afterEach((done) => {
             cleanDatabase();
-
             done();
         });
 
+        // tests
         it('it should POST a player for register', (done) => {
             let player = {
                 username: 'john',
